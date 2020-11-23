@@ -23,30 +23,30 @@ public class RaycastController : MonoBehaviour
         }   
     }
 
-    public void playSound(int sound) {
-        audio.clip = clips[sound];
-        audio.Play();
-    }
+    // public void playSound(int sound) {
+    //     audio.clip = clips[sound];
+    //     audio.Play();
+    // }
 
     void Start() {
         StartCoroutine(spawnNewBird());
-        playSound(2);    
+        // playSound(2);    
     }
 
     private IEnumerator spawnNewBird(){
         yield return new WaitForSeconds(3f);
 
-        GameObject newBird = Instantiate(Resources.Load("Bird_Asset", typeof(GameObject))) as GameObject;
+        // GameObject newBird = Instantiate(Resources.Load("Bird_Asset", typeof(GameObject))) as GameObject;
 
-        newBird.transform.parent =  GameObject.Find("ImageTarget").transform;
+        // newBird.transform.parent =  GameObject.Find("ImageTarget").transform;
 
-        newBird.transform.localScale = new Vector3(10f,10f,10f);
+        // newBird.transform.localScale = new Vector3(10f,10f,10f);
 
-        Vector3 temp;
-        temp.x = Random.Range(-48f, 48f);
-        temp.y = Random.Range(10f,50f);
-        temp.z = Random.Range(-48f, 48f);
-        newBird.transform.position = new Vector3(temp.x, temp.y, temp.z);
+        // Vector3 temp;
+        // temp.x = Random.Range(-48f, 48f);
+        // temp.y = Random.Range(10f,50f);
+        // temp.z = Random.Range(-48f, 48f);
+        // newBird.transform.position = new Vector3(temp.x, temp.y, temp.z);
     }
 
     public void Fire() {
