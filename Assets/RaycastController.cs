@@ -23,14 +23,14 @@ public class RaycastController : MonoBehaviour
         }   
     }
 
-    // public void playSound(int sound) {
-    //     audio.clip = clips[sound];
-    //     audio.Play();
-    // }
+    public void playSound(int sound) {
+        audio.clip = clips[sound];
+        audio.Play();
+    }
 
     void Start() {
         StartCoroutine(spawnNewBird());
-        // playSound(2);    
+        playSound(2);    
     }
 
     private IEnumerator spawnNewBird(){
