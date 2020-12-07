@@ -61,6 +61,8 @@ public class RaycastController : MonoBehaviour
        Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
        RaycastHit hit;
 
+       GameController.instance.tembakPerRonde--;
+
        int layer_mask = LayerMask.GetMask("bridLayer");
        if (Physics.Raycast(ray, out hit, maxDistanceRay, layer_mask))
        {
@@ -72,6 +74,10 @@ public class RaycastController : MonoBehaviour
            {
                Destroy(hit.collider.gameObject);
                spawnNewBird();
+
+               GameController.instance.tembakPerRonde =3;
+               GameController.instance.playerScore++;
+               GameController.instance.roundScore++;
            }
        }
 
