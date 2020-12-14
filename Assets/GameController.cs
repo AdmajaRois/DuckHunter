@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     public Text teksJmlRonde;
     public Text targetTeks;
     public int tembakPerRonde = 3;
-    public int nyawa = 2;
+    private int nyawa = 2;
     public Text skorGameOverTeks;
     public GameObject[] peluru;
 
